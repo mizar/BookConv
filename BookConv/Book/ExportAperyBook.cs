@@ -114,7 +114,7 @@ namespace ShogiLib
             {
                 if (move.Weight != 0)
                 {
-                    aperyBook.Add(GetKey(position), move.ConvFromToPro(), move.Weight);
+                    aperyBook.Add(GetKey(position), move.ConvFromToPro(), move.Weight, move.Value);
                 }
 
                 MoveData moveData = move.GetMoveData();

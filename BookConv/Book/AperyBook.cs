@@ -77,9 +77,9 @@ namespace Apery
         /// <summary>
         /// 追加
         /// </summary>
-        public void Add(ulong key, ushort formToPro, int count)
+        public void Add(ulong key, ushort formToPro, int count, int score)
         {
-            AperyBookEntry entry = new AperyBookEntry(key, formToPro, count);
+            AperyBookEntry entry = new AperyBookEntry(key, formToPro, count, score);
 
             if (!this.bookCollection.ContainsKey(key))
             {
@@ -121,12 +121,13 @@ namespace Apery
         public ushort Count;
         public int Score;
 
-        public AperyBookEntry(ulong key, ushort fromToPro, int count)
+        public AperyBookEntry(ulong key, ushort fromToPro, int count, int score)
         {
             this.Key = key;
             this.FromToPro = fromToPro;
 
             this.Count = (count > ushort.MaxValue) ? ushort.MaxValue : (ushort)count;
+            this.Score = score;
         }
 
         /// <summary>
